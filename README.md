@@ -16,6 +16,23 @@ npm run dev
 npm run build
 ```
 
+## Hospedagem em Pages
+
+O projeto está configurado para exportação estática. Para gerar os arquivos
+prontos para hospedagem:
+
+```bash
+npm install
+npm run build
+```
+
+Na plataforma de Pages, use `npm run build` como comando de build e
+`dist/client` como diretório de publicação. O arquivo final será
+`dist/client/index.html`, acompanhado dos assets em `dist/client/assets` e
+`dist/client/_next`.
+
+Essa versão não depende de um servidor Node ou Worker para exibir a página.
+
 This starter does not use `wrangler.jsonc`.
 
 ## Included Shape

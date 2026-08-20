@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ExperienceEnhancer from "./components/ExperienceEnhancer";
 import GoogleReviews from "./components/GoogleReviews";
 
 export const metadata: Metadata = {
@@ -79,6 +80,7 @@ const benefits = [
 export default function Home() {
   return (
     <main>
+      <ExperienceEnhancer />
       <header className="site-header">
         <a className="brand" href="#inicio" aria-label="Amanda Bergamasco Massoterapia">
           <img src="/assets/logo-original.png" alt="Amanda Bergamasco Massoterapia" />
@@ -100,7 +102,8 @@ export default function Home() {
 
       <section className="hero" id="inicio">
         <div className="hero-overlay" />
-        <div className="hero-content shell">
+        <div className="hero-atmosphere" aria-hidden="true"><span /><span /><span /></div>
+        <div className="hero-content shell" data-reveal>
           <p className="eyebrow light">Amanda Bergamasco · Massoterapia</p>
           <h1>
             Seu corpo merece um cuidado que <em>faz diferença.</em>
@@ -124,11 +127,14 @@ export default function Home() {
             </span>
           </div>
         </div>
+        <a className="hero-scroll-cue" href="#diferencial" aria-label="Conhecer o diferencial">
+          <span>descubra o cuidado</span><i aria-hidden="true" />
+        </a>
         <div className="hero-side-label">Cuidado que se sente</div>
       </section>
 
       <section className="intro-band">
-        <div className="shell intro-grid">
+        <div className="shell intro-grid" data-reveal>
           <p className="section-kicker">Um espaço para voltar para si</p>
           <p className="intro-lede">
             Mais do que uma massagem, uma pausa com intenção. Cada sessão é pensada para entender o que seu corpo precisa hoje — com técnica, presença e respeito ao seu tempo.
@@ -139,20 +145,20 @@ export default function Home() {
 
       <section className="differential section-pad" id="diferencial">
         <div className="shell differential-grid">
-          <div className="differential-media">
+          <div className="differential-media" data-reveal>
             <div className="image-frame frame-large">
-              <img src="/assets/miofascial-1.jpg" alt="Aplicação de liberação miofascial com instrumento" />
+              <img src="/assets/miofascial-1.jpg" alt="Aplicação de liberação miofascial com instrumento" loading="lazy" decoding="async" />
               <span className="image-caption">Técnica manual e instrumental</span>
             </div>
             <div className="image-frame frame-small">
-              <img src="/assets/miofascial-2.jpg" alt="Atendimento de liberação miofascial" />
+              <img src="/assets/miofascial-2.jpg" alt="Atendimento de liberação miofascial" loading="lazy" decoding="async" />
               <a className="play-link" href={instagramUrl} target="_blank" rel="noreferrer" aria-label="Ver vídeos e bastidores no Instagram">
                 <span className="play-icon" aria-hidden="true">▶</span> Ver vídeos e bastidores
               </a>
             </div>
             <span className="floating-stamp">feito<br />com presença</span>
           </div>
-          <div className="differential-copy">
+          <div className="differential-copy" data-reveal>
             <p className="eyebrow">Nosso principal diferencial</p>
             <h2>Liberação <span>miofascial</span></h2>
             <p className="method-line">Manual Instrumental · Método Flávio Salik</p>
@@ -174,7 +180,7 @@ export default function Home() {
 
       <section className="services section-pad" id="tratamentos">
         <div className="shell">
-          <div className="section-heading heading-split">
+          <div className="section-heading heading-split" data-reveal>
             <div>
               <p className="eyebrow">Técnicas para diferentes necessidades</p>
               <h2>Escolha seu <span>cuidado</span></h2>
@@ -185,9 +191,9 @@ export default function Home() {
           </div>
           <div className="services-grid">
             {services.map((service, index) => (
-              <article className={`service-card ${service.tone}`} key={service.title}>
+            <article className={`service-card ${service.tone}`} key={service.title} data-reveal>
                 <div className="service-image-wrap">
-                  <img src={service.image} alt={service.title} />
+                  <img src={service.image} alt={service.title} loading="lazy" decoding="async" />
                   <span className="service-index">0{index + 1}</span>
                 </div>
                 <div className="service-card-body">
@@ -201,7 +207,7 @@ export default function Home() {
               </article>
             ))}
           </div>
-          <div className="video-note">
+          <div className="video-note" data-reveal>
             <span className="video-note-icon" aria-hidden="true">●</span>
             <p>Fotos e vídeos de cada técnica ajudam você a chegar mais seguro. <a href={instagramUrl} target="_blank" rel="noreferrer">Veja o nosso Instagram</a> para acompanhar movimentos, bastidores e resultados do atendimento.</p>
           </div>
@@ -210,13 +216,13 @@ export default function Home() {
 
       <section className="pricing section-pad" id="valores">
         <div className="shell pricing-grid">
-          <div>
+          <div data-reveal>
             <p className="eyebrow">Tudo claro antes de começar</p>
             <h2>Pacotes <span>e valores</span></h2>
             <p className="pricing-copy">Para deixar sua escolha mais simples, concentramos os valores em um único lugar. A duração e a técnica podem ser combinadas de acordo com a sua necessidade.</p>
             <a className="text-link dark-link" href={whatsappUrl} target="_blank" rel="noreferrer">Tirar dúvidas pelo WhatsApp <span aria-hidden="true">↗</span></a>
           </div>
-          <div className="price-table" role="table" aria-label="Tabela de valores por duração">
+          <div className="price-table" role="table" aria-label="Tabela de valores por duração" data-reveal>
             {prices.map(([duration, value]) => (
               <div className="price-row" role="row" key={duration}>
                 <span role="cell">{duration}</span><strong role="cell">{value}</strong>
@@ -229,14 +235,14 @@ export default function Home() {
 
       <section className="gift section-pad" id="presente">
         <div className="shell gift-grid">
-          <div className="gift-copy">
+          <div className="gift-copy" data-reveal>
             <p className="eyebrow">Um presente que vira memória</p>
             <h2>Vale-presente <span>com intenção</span></h2>
             <p>Você pode presentear alguém especial com um voucher de massoterapia personalizado, disponível nas versões física e digital.</p>
             <div className="gift-pills"><span>versão física</span><span>versão digital</span><span>mensagem personalizada</span></div>
             <a className="button button-dark" href={whatsappUrl} target="_blank" rel="noreferrer">Quero presentear <span aria-hidden="true">↗</span></a>
           </div>
-          <div className="gift-visual">
+          <div className="gift-visual" data-reveal>
             <div className="gift-card">
               <span className="gift-card-small">para você, com carinho</span>
               <strong>vale<br /><em>presente</em></strong>
@@ -249,15 +255,15 @@ export default function Home() {
 
       <section className="experience section-pad" id="experiencia">
         <div className="shell">
-          <div className="section-heading heading-split">
+          <div className="section-heading heading-split" data-reveal>
             <div>
               <p className="eyebrow">Seu momento, do seu jeito</p>
               <h2>Uma experiência que <span>celebra</span></h2>
             </div>
             <p>Além das técnicas, cuidamos dos detalhes. A sala pode ser preparada para aniversários, datas especiais e pequenos rituais de autocuidado.</p>
           </div>
-          <div className="experience-card">
-            <img src="/assets/occasion-room.png" alt="Sala de massoterapia preparada com balões, flores, toalhas e velas" />
+          <div className="experience-card" data-reveal>
+            <img src="/assets/occasion-room.png" alt="Sala de massoterapia preparada com balões, flores, toalhas e velas" loading="lazy" decoding="async" />
             <div className="experience-overlay">
               <span className="experience-label">ocasiões especiais</span>
               <h3>Um atendimento<br /><em>com a sua cara.</em></h3>
@@ -269,8 +275,8 @@ export default function Home() {
       </section>
 
       <section className="corporate section-pad" id="empresas">
-        <div className="shell corporate-card">
-          <div className="corporate-image"><img src="/assets/corporativo.jpg" alt="Equipe reunida em ambiente corporativo" /></div>
+        <div className="shell corporate-card" data-reveal>
+          <div className="corporate-image"><img src="/assets/corporativo.jpg" alt="Equipe reunida em ambiente corporativo" loading="lazy" decoding="async" /></div>
           <div className="corporate-copy">
             <p className="eyebrow">Para cuidar de quem faz acontecer</p>
             <h2>Quick Massage para <span>empresas e eventos</span></h2>
@@ -283,20 +289,20 @@ export default function Home() {
 
       <section className="partnerships section-pad" id="parcerias">
         <div className="shell">
-          <div className="section-heading">
+          <div className="section-heading" data-reveal>
             <p className="eyebrow">Benefícios para quem está por perto</p>
             <h2>Parcerias que <span>cuidam</span></h2>
             <p>Descontos exclusivos para comunidades que valorizam saúde, bem-estar e qualidade de vida.</p>
           </div>
           <div className="partnership-grid">
-            <article className="partner-card">
+            <article className="partner-card" data-reveal>
               <span className="partner-number">01</span>
               <div className="partner-logo">G<br /><small>ANCHIETA</small></div>
               <h3>Grupo Anchieta / Vivantagens</h3>
               <p>Desconto exclusivo para colaboradores, alunos e corpo docente.</p>
               <span className="partner-tag">benefício exclusivo</span>
             </article>
-            <article className="partner-card partner-card-warm">
+            <article className="partner-card partner-card-warm" data-reveal>
               <span className="partner-number">02</span>
               <div className="partner-logo logo-sv">SV<br /><small>SÃO VICENTE</small></div>
               <h3>Hospital São Vicente</h3>
@@ -309,18 +315,18 @@ export default function Home() {
 
       <section className="reviews section-pad" id="avaliacoes">
         <div className="shell reviews-grid">
-          <div className="reviews-intro">
+          <div className="reviews-intro" data-reveal>
             <p className="eyebrow">Palavras de quem já viveu</p>
             <h2>O cuidado que fica <span>na memória</span></h2>
             <p>Experiências reais ajudam quem está chegando a entender o nosso jeito de atender.</p>
             <a className="text-link dark-link" href="https://www.google.com/maps/search/?api=1&query=Amanda+Bergamasco+Massoterapia" target="_blank" rel="noreferrer">Ver avaliações no Google <span aria-hidden="true">↗</span></a>
           </div>
-          <GoogleReviews />
+          <div data-reveal><GoogleReviews /></div>
         </div>
       </section>
 
       <section className="final-cta">
-        <div className="shell final-cta-inner">
+        <div className="shell final-cta-inner" data-reveal>
           <p className="eyebrow light">Seu próximo cuidado começa aqui</p>
           <h2>Vamos encontrar o melhor <em>caminho para você?</em></h2>
           <a className="button button-light" href={whatsappUrl} target="_blank" rel="noreferrer">Agendar pelo WhatsApp <span aria-hidden="true">↗</span></a>
@@ -329,7 +335,7 @@ export default function Home() {
 
       <footer className="site-footer">
         <div className="shell footer-grid">
-          <a className="footer-brand" href="#inicio"><img src="/assets/logo-original.png" alt="" /><span>Amanda Bergamasco<small>massoterapia</small></span></a>
+          <a className="footer-brand" href="#inicio"><img src="/assets/logo-original.png" alt="" loading="lazy" decoding="async" /><span>Amanda Bergamasco<small>massoterapia</small></span></a>
           <p>Atendimento personalizado<br />com hora marcada.</p>
           <a className="footer-instagram" href={instagramUrl} target="_blank" rel="noreferrer">Instagram <span aria-hidden="true">↗</span></a>
           <p className="footer-copy">© 2024 Amanda Bergamasco · Todos os direitos reservados</p>
@@ -337,7 +343,7 @@ export default function Home() {
       </footer>
 
       <a className="floating-whatsapp" href={whatsappUrl} target="_blank" rel="noreferrer" aria-label="Agendar pelo WhatsApp">
-        <img src="/assets/whatsapp-original.png" alt="" />
+        <img src="/assets/whatsapp-icon.svg" alt="" />
       </a>
     </main>
   );
