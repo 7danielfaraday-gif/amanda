@@ -26,7 +26,7 @@ test("server-renders the Amanda Bergamasco experience", async () => {
   assert.match(html, /Hospital São Vicente/);
   assert.match(html, /Quick Massage para/);
   assert.match(html, /Vale-presente/);
-  assert.match(html, /Avaliações de clientes/);
+  assert.match(html, /Conexão com o Google pendente/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|SkeletonPreview/);
 });
 

@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 type Review = { author: string; text: string; rating: number };
 
 const fallbackReviews: Review[] = [
-  { author: "Cliente Amanda", text: "Um cuidado preciso, acolhedor e que realmente mudou a forma como eu sentia meu corpo.", rating: 5 },
-  { author: "Cliente Amanda", text: "Saí mais leve e com uma sensação de espaço no corpo que eu estava precisando há muito tempo.", rating: 5 },
+  { author: "Conexão Google", text: "Os depoimentos reais aparecerão aqui automaticamente assim que o Perfil da Empresa for conectado.", rating: 0 },
+  { author: "Enquanto isso", text: "Confira as avaliações atualizadas diretamente no Google.", rating: 0 },
 ];
 
 export default function GoogleReviews() {
@@ -29,11 +29,11 @@ export default function GoogleReviews() {
 
   return (
     <div className="google-reviews">
-      <div className="google-status">{synced ? "Avaliações atualizadas pelo Google" : "Avaliações de clientes"}</div>
+      <div className="google-status">{synced ? "Avaliações atualizadas pelo Google" : "Conexão com o Google pendente"}</div>
       <div className="review-cards">
         {reviews.slice(0, 2).map((review, index) => (
           <article className="review-card" key={`${review.author}-${index}`}>
-            <div className="review-stars" aria-label={`${review.rating} de 5 estrelas`}>{"★".repeat(review.rating)}</div>
+            <div className="review-stars" aria-label={review.rating ? `${review.rating} de 5 estrelas` : "Fonte Google"}>{review.rating ? "★".repeat(review.rating) : "GOOGLE"}</div>
             <blockquote>“{review.text}”</blockquote>
             <cite>{review.author}</cite>
           </article>
