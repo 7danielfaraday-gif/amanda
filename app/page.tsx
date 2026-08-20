@@ -90,6 +90,7 @@ export default function Home() {
           </span>
         </a>
         <nav className="desktop-nav" aria-label="Navegação principal">
+          <a href="#sobre">Sobre</a>
           <a href="#tratamentos">Tratamentos</a>
           <a href="#experiencia">Experiência</a>
           <a href="#parcerias">Parcerias</a>
@@ -140,6 +141,47 @@ export default function Home() {
             Mais do que uma massagem, uma pausa com intenção. Cada sessão é pensada para entender o que seu corpo precisa hoje — com técnica, presença e respeito ao seu tempo.
           </p>
           <div className="intro-signature">AB <span>·</span> 2024</div>
+        </div>
+      </section>
+
+      <section className="about section-pad" id="sobre">
+        <div className="shell about-shell" data-reveal>
+          <div className="about-media">
+            <div className="about-photo-frame">
+              <img src="/assets/miofascial-1.jpg" alt="Amanda Bergamasco durante um atendimento de massoterapia" loading="lazy" decoding="async" />
+            </div>
+            <div className="about-photo-detail" aria-hidden="true"><span>AB</span><small>presença<br />e técnica</small></div>
+            <div className="about-photo-note">desde<br /><strong>2023</strong></div>
+          </div>
+          <div className="about-copy">
+            <p className="eyebrow light">Conheça quem cuida de você</p>
+            <h2>Amanda <span>Bergamasco</span></h2>
+            <p className="about-lede">
+              Minha jornada na massoterapia começou com o desejo de transformar dor e tensão em mais liberdade para viver. Hoje, cada atendimento une estudo, escuta e um cuidado genuinamente feito para a pessoa que está à minha frente.
+            </p>
+            <p className="about-body">
+              Desde 2023, construo um trabalho autoral, acolhedor e preciso — com a Liberação Miofascial Manual Instrumental pelo Método Flávio Salik como um dos pilares do meu atendimento.
+            </p>
+            <div className="about-stats" aria-label="Destaques profissionais">
+              <div><strong>01</strong><span>cuidado<br />individualizado</span></div>
+              <div><strong>03+</strong><span>anos de<br />dedicação</span></div>
+              <div><strong>AB</strong><span>presença<br />em cada sessão</span></div>
+            </div>
+            <div className="about-links" aria-label="Canais da Amanda">
+              <a href={instagramUrl} target="_blank" rel="noreferrer">
+                <span className="about-social-icon instagram-glyph" aria-hidden="true">◎</span>
+                <span>Instagram</span><b aria-hidden="true">↗</b>
+              </a>
+              <a href={whatsappUrl} target="_blank" rel="noreferrer">
+                <span className="about-social-icon whatsapp-glyph" aria-hidden="true"><img src="/assets/whatsapp-icon.svg" alt="" /></span>
+                <span>WhatsApp</span><b aria-hidden="true">↗</b>
+              </a>
+              <a href="https://www.google.com/maps/search/?api=1&query=Amanda+Bergamasco+Massoterapia" target="_blank" rel="noreferrer">
+                <span className="about-social-icon google-glyph" aria-hidden="true">★</span>
+                <span>Avaliações</span><b aria-hidden="true">↗</b>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
