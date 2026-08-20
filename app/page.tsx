@@ -148,7 +148,7 @@ export default function Home() {
         <div className="shell about-shell" data-reveal>
           <div className="about-media">
             <div className="about-photo-frame">
-              <img src="/assets/miofascial-1.jpg" alt="Amanda Bergamasco durante um atendimento de massoterapia" loading="lazy" decoding="async" />
+              <img src="/assets/amanda-portrait.jpg" alt="Amanda Bergamasco, massoterapeuta" loading="lazy" decoding="async" />
             </div>
             <div className="about-photo-detail" aria-hidden="true"><span>AB</span><small>presença<br />e técnica</small></div>
             <div className="about-photo-note">desde<br /><strong>2023</strong></div>

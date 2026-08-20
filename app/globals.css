@@ -443,7 +443,7 @@ a:focus-visible { outline: 2px solid var(--peach); outline-offset: 4px; }
 .about-media { position: relative; z-index: 1; display: grid; min-height: 560px; place-items: center; padding: 58px 25px 58px 56px; }
 .about-media::before { position: absolute; left: 16%; top: 20%; width: 68%; aspect-ratio: 1; border: 1px solid rgba(255,255,255,.2); border-radius: 50%; content: ""; }
 .about-photo-frame { position: relative; z-index: 1; width: min(100%, 360px); aspect-ratio: 1; overflow: hidden; border: 12px solid rgba(255,255,255,.14); border-radius: 50%; background: var(--paper-warm); box-shadow: 0 20px 40px rgba(34,51,68,.22); }
-.about-photo-frame img { width: 100%; height: 100%; object-fit: cover; object-position: 69% center; filter: saturate(.88); transition: transform .65s ease, filter .35s ease; }
+.about-photo-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center 34%; filter: saturate(.88); transition: transform .65s ease, filter .35s ease; }
 .about-shell:hover .about-photo-frame img { filter: saturate(1); transform: scale(1.04); }
 .about-photo-detail { position: absolute; z-index: 2; right: 4%; bottom: 16%; display: flex; align-items: center; gap: 9px; color: var(--white); transform: rotate(-8deg); }
 .about-photo-detail span { display: grid; width: 57px; height: 57px; place-items: center; border: 1px solid var(--peach); border-radius: 50%; color: var(--peach); font-family: "Julius Sans One", serif; font-size: 18px; }
