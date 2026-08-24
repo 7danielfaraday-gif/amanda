@@ -17,7 +17,7 @@ const services = [
     eyebrow: "Grande diferencial",
     description:
       "Técnica precisa e profunda, com instrumentos e manobras manuais para reduzir tensões, melhorar a mobilidade e apoiar a recuperação muscular.",
-    image: "/assets/miofascial-1.jpg",
+    image: "/assets/liberacao-miofascial-amanda.jpg",
     tone: "service-featured",
   },
   {
@@ -25,15 +25,15 @@ const services = [
     eyebrow: "Desacelerar",
     description:
       "Um cuidado acolhedor para aliviar o estresse, relaxar a musculatura e devolver leveza ao corpo e à rotina.",
-    image: "/assets/relaxante.jpg",
+    image: "/assets/massagem-relaxante-amanda.jpg",
     tone: "",
   },
   {
-    title: "Massagem Terapêutica",
+    title: "Shiatsu",
     eyebrow: "Cuidado direcionado",
     description:
-      "Manobras adaptadas às necessidades de cada pessoa para cuidar de desconfortos, sobrecargas e limitações do dia a dia.",
-    image: "/assets/miofascial-2.jpg",
+      "Pressões precisas e conscientes para liberar tensões, melhorar a mobilidade e devolver presença ao corpo.",
+    image: "/assets/shiatsu-amanda.jpg",
     tone: "",
   },
   {
@@ -41,7 +41,7 @@ const services = [
     eyebrow: "Leveza",
     description:
       "Movimentos suaves e ritmados que favorecem a circulação linfática e ajudam a reduzir a sensação de inchaço.",
-    image: "/assets/drenagem.jpg",
+    image: "/assets/drenagem-amanda.jpg",
     tone: "",
   },
   {
@@ -49,7 +49,7 @@ const services = [
     eyebrow: "Pausa para os pés",
     description:
       "Pressões e estímulos nos pés para relaxar, aliviar a sensação de cansaço e complementar o cuidado integral.",
-    image: "/assets/reflexologia.jpg",
+    image: "/assets/reflexologia-amanda.jpg",
     tone: "",
   },
   {
