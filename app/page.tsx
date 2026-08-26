@@ -318,7 +318,7 @@ export default function Home() {
 
       <section className="corporate section-pad" id="empresas">
         <div className="shell corporate-card" data-reveal>
-          <div className="corporate-image"><img src="/assets/corporativo.jpg" alt="Equipe reunida em ambiente corporativo" loading="lazy" decoding="async" /></div>
+          <div className="corporate-image"><img src="/assets/quick-massage-amanda.jpg" alt="Amanda realizando Quick Massage em um evento" loading="lazy" decoding="async" /></div>
           <div className="corporate-copy">
             <p className="eyebrow">Para cuidar de quem faz acontecer</p>
             <h2>Quick Massage para <span>empresas e eventos</span></h2>
