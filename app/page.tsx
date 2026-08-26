@@ -57,7 +57,7 @@ const services = [
     eyebrow: "Na empresa ou no evento",
     description:
       "Atendimento prático e revigorante para ações corporativas, SIPATs, feiras, ativações e eventos.",
-    image: "/assets/corporativo.jpg",
+    image: "/assets/quick-massage-amanda.jpg",
     tone: "",
   },
 ];
