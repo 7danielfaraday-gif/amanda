@@ -62,11 +62,29 @@ const services = [
   },
 ];
 
-const prices = [
-  ["30 minutos", "R$ 90,00"],
-  ["60 minutos", "R$ 135,00"],
-  ["90 minutos", "R$ 202,50"],
-  ["120 minutos", "R$ 270,00"],
+const priceGroups = [
+  {
+    title: "Primeiro atendimento ou sessões pontuais",
+    rows: [
+      ["60 minutos", "R$ 152,00"],
+      ["90 minutos", "R$ 228,00"],
+      ["120 minutos", "R$ 306,00"],
+    ],
+  },
+  {
+    title: "Sessões de acompanhamento",
+    note: "Semanais ou quinzenais",
+    rows: [
+      ["60 minutos", "R$ 135,00"],
+      ["90 minutos", "R$ 202,50"],
+      ["120 minutos", "R$ 270,00"],
+    ],
+  },
+];
+
+const auriculoterapiaPrices = [
+  ["Junto com a sessão de massagem", "R$ 60,00"],
+  ["Atendimento apenas de auriculoterapia", "R$ 90,00"],
 ];
 
 const benefits = [
@@ -261,16 +279,30 @@ export default function Home() {
           <div data-reveal>
             <p className="eyebrow">Tudo claro antes de começar</p>
             <h2>Pacotes <span>e valores</span></h2>
-            <p className="pricing-copy">Para deixar sua escolha mais simples, concentramos os valores em um único lugar. A duração e a técnica podem ser combinadas de acordo com a sua necessidade.</p>
+            <p className="pricing-copy">Os valores são definidos pela duração e pelo momento do acompanhamento, independentemente da técnica escolhida.</p>
             <a className="text-link dark-link" href={whatsappUrl} target="_blank" rel="noreferrer">Tirar dúvidas pelo WhatsApp <span aria-hidden="true">↗</span></a>
           </div>
-          <div className="price-table" role="table" aria-label="Tabela de valores por duração" data-reveal>
-            {prices.map(([duration, value]) => (
-              <div className="price-row" role="row" key={duration}>
-                <span role="cell">{duration}</span><strong role="cell">{value}</strong>
+          <div className="price-tables" data-reveal>
+            {priceGroups.map((group) => (
+              <div className="price-table" role="table" aria-label={group.title} key={group.title}>
+                <h3>{group.title}</h3>
+                {group.note && <p className="price-group-note">{group.note}</p>}
+                {group.rows.map(([duration, value]) => (
+                  <div className="price-row" role="row" key={`${group.title}-${duration}`}>
+                    <span role="cell">{duration}</span><strong role="cell">{value}</strong>
+                  </div>
+                ))}
               </div>
             ))}
-            <p className="price-footnote">Valores de referência para atendimento individual. Consulte disponibilidade e condições no agendamento.</p>
+            <div className="price-table price-table-auriculo" role="table" aria-label="Valores de auriculoterapia">
+              <h3>Auriculoterapia</h3>
+              {auriculoterapiaPrices.map(([option, value]) => (
+                <div className="price-row" role="row" key={option}>
+                  <span role="cell">{option}</span><strong role="cell">{value}</strong>
+                </div>
+              ))}
+            </div>
+            <p className="price-footnote">Valores informados pela clínica. Consulte disponibilidade e condições no agendamento.</p>
           </div>
         </div>
       </section>
